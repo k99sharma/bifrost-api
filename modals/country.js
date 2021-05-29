@@ -3,52 +3,40 @@ const Schema = mongoose.Schema;
 
 const countrySchema = new Schema({
     name : {
-        type : String,
-        required : true
+        type : String
     },
     capital : {
-        type : String,
-        required : true
+        type : String
     },
     region : {
-        type : String,
-        required : true
+        type : String
     },
     subregion : {
-        type : String,
-        required : true
+        type : String
     },
     population : {
-        type : String,
-        required : true
+        type : String
     },
     area : {
-        type : String,
-        required : true
+        type : String
     },
     flag : {
-        type : String,
-        required : true
+        type : String
     },
     borders : {
-        type : Array,
-        required : true
+        type : Array
     },
     currencies : {
-        type : Array,
-        reqired : true
+        type : Array
     },
     languages : {
-        type : Array,
-        required : true
+        type : Array
     },
     timezones : {
-        type : Array,
-        required : true
+        type : Array
     },
     callingCodes : {
-        type : Array,
-        required : true
+        type : Array
     }
 });
 
