@@ -8,11 +8,10 @@ module.exports.getCountryData = async (req, res) => {
 
     const country = await Country.findOne({
         code : countryCode
-    })
-        .then((country)=>{
-            res.statusCode(200).send(country)
-        })
-        .catch(err => {
-            console.log('Error: ' + err);
-        })
+    });
+
+    if(!country){
+        return res.status(400).send({ error : "Data not found"});
+    }
+    res.status(200).send(country);
 }
