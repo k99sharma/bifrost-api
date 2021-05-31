@@ -10,9 +10,9 @@ module.exports.getCountryData = async (req, res) => {
         code : countryCode
     })
         .then((country)=>{
-            res.statusCode(200).send(country)
+            res.send(country);
         })
         .catch(err => {
-            console.log('Error: ' + err);
+            console.assert('Error: ' + err);
         })
-}
+};
