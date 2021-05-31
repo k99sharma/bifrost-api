@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 
 // importing routes
-
+const fetchCountry = require('./routes/fetchCountry');
 
 
 const app = express();
@@ -38,7 +38,7 @@ mongoose.connect('mongodb://localhost:27017/bifrost',
 
 
 // routes
-
+app.use('/bifrost', fetchCountry);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
