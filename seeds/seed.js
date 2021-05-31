@@ -54,6 +54,7 @@ mongoose.connect('mongodb://localhost:27017/bifrost',
 const extractAndSaveCountryData = async (data)=>{
     const countryData = new Country({
         name : data[0].name,
+        code : data[0].alpha2Code ,
         capital : data[0].capital,
         region : data[0].region,
         subregion : data[0].subregion,

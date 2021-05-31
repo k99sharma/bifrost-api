@@ -5,6 +5,9 @@ const countrySchema = new Schema({
     name : {
         type : String
     },
+    code : {
+        type : String
+    },
     capital : {
         type : String
     },
