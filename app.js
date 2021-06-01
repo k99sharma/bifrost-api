@@ -36,7 +36,7 @@ mongoose.connect('mongodb://localhost:27017/bifrost',
 
 
 // routes
-app.use('/bifrost', fetchCountry);
+app.use('/v1.0/bifrost', fetchCountry);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

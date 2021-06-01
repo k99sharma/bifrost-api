@@ -2,7 +2,7 @@ const Country = require('../modals/country');
 
 const {findCountryCode} = require('../countryCodeList/codelist');
 
-module.exports.getCountryData = async (req, res) => {
+exports.getCountryData = async (req, res) => {
     const countryName = req.query.name;
     const countryCode = findCountryCode(countryName);
 
@@ -10,8 +10,9 @@ module.exports.getCountryData = async (req, res) => {
         code : countryCode
     });
 
+
     if(!country){
-        return res.status(400).send({ error : "Data not found"});
+        return res.status(404).send({ error : "Data not found"});
     }
     res.status(200).send(country);
 }
