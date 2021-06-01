@@ -60,6 +60,7 @@ const extractAndSaveCountryData = async (data)=>{
         subregion : data[0].subregion,
         population : data[0].population,
         area : data[0].area,
+        latlng : data[0].latlng,
         flag : data[0].flag,
         borders : data[0].borders,
         currencies : data[0].currencies,
