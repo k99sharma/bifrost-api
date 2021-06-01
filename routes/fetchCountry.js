@@ -5,6 +5,6 @@ const router = express.Router();
 const { getCountryData } = require('../controllers/fetchCountry');
 
 
-router.get('/', getCountryData);
+router.get('/country', getCountryData);
 
 module.exports = router;
