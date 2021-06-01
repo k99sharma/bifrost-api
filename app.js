@@ -6,7 +6,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const xss = require(xss-clean);
+const xss = require('xss-clean');
 const helmet = require('helmet');
 
 // importing routes
