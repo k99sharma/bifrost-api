@@ -23,6 +23,9 @@ const countrySchema = new Schema({
     area : {
         type : String
     },
+    latlng : {
+        type : Array
+    },
     flag : {
         type : String
     },
