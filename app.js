@@ -4,6 +4,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const rateLimit = require('express-rate-limit');
 
 
 // importing routes
@@ -15,7 +16,7 @@ const app = express();
 
 // setting up middleware
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({ limit : "10kb" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
@@ -34,9 +35,15 @@ mongoose.connect('mongodb://localhost:27017/bifrost',
     console.log(err);
   })
 
+// limit request to server to avoid dos attacks
+const limit = rateLimit({
+  max: 200,
+  windowMs: 30*60*1000, // 30 minutes block
+  message: "Too many requests, wait for 30 minutes now"
+});
 
 // routes
-app.use('/bifrost/v1.0/', fetchCountry);
+app.use('/bifrost/v1.0/', fetchCountry, limit);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
