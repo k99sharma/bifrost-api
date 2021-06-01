@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
 
 
 // importing routes
@@ -19,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.json({ limit : "10kb" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(helmet());
 
 
 // database connection
