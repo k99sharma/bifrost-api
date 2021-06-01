@@ -6,6 +6,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const xss = require(xss-clean);
+const helmet = require('helmet');
 
 // importing routes
 const fetchCountry = require('./routes/fetchCountry');
@@ -20,6 +22,8 @@ app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+app.use(xss());
+app.use(helmet());
 
 
 // database connection
