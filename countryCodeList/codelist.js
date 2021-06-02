@@ -299,6 +299,6 @@ const CODE_LIST = {
 }
 
 
-export function findCountryCode(name) {
+module.exports.findCountryCode = (name)=>{
     return CODE_LIST[name];
 }
