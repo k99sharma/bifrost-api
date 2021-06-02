@@ -1,7 +1,10 @@
+// importing model
 const Country = require('../modals/country');
 
+// country alpha2Code list
 const {findCountryCode} = require('../countryCodeList/codelist');
 
+// function to fetch country
 exports.getCountryData = async (req, res) => {
     const countryName = req.query.name;
     const countryCode = findCountryCode(countryName);

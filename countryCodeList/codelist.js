@@ -1,3 +1,5 @@
+// country alpha2Code list dictionary
+
 const CODE_LIST = {
     // A
     "afghanistan" : "AF",
@@ -297,6 +299,6 @@ const CODE_LIST = {
 }
 
 
-module.exports.findCountryCode = (name) => {
+export function findCountryCode(name) {
     return CODE_LIST[name];
 }
