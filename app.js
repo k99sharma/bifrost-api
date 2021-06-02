@@ -9,6 +9,11 @@ const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
 const helmet = require('helmet');
 
+
+// setting up environment variables
+if (process.env.NODE_ENV !== "production")
+  require('dotenv').config();
+
 // importing routes
 const fetchCountry = require('./routes/fetchCountry');
 
@@ -27,7 +32,9 @@ app.use(helmet());
 
 
 // database connection
-mongoose.connect('mongodb://localhost:27017/bifrost', 
+const DBUrl = process.env.DB_URI;
+
+mongoose.connect(DBUrl, 
 {
   useNewUrlParser: true, 
   useUnifiedTopology: true
@@ -35,9 +42,10 @@ mongoose.connect('mongodb://localhost:27017/bifrost',
   .then(()=>{
     console.log('Database connection successful !');
   })
-  .catch(err => {
+  .catch((err, next) => {
     console.log('Database connection failed !');
     console.log(err);
+    next(createError(500))
   })
 
 
@@ -60,7 +68,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = process.env.NODE_ENV === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);

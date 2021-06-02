@@ -3,9 +3,13 @@ const Country = require('../modals/country');
 
 // importing modules
 const fetch = require('node-fetch');
+const path = require('path');
 const mongoose = require('mongoose');
 
+require('dotenv').config();
+
 let totalCountriesSaved = 0;
+
 
 // country code array
 const countryCode = [
@@ -36,7 +40,9 @@ const countryCode = [
 ];
 
 // connecting to database
-mongoose.connect('mongodb://localhost:27017/bifrost', 
+const DBUrl = process.env.DB_URI;
+
+mongoose.connect(DBUrl, 
 {
   useNewUrlParser: true, 
   useUnifiedTopology: true
