@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+// module schema
 const countrySchema = new Schema({
     name : {
         type : String
@@ -46,6 +48,8 @@ const countrySchema = new Schema({
     }
 });
 
+
+// country model
 const Country = mongoose.model('Country', countrySchema);
 
 module.exports = Country;

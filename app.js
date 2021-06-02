@@ -14,6 +14,7 @@ const helmet = require('helmet');
 if (process.env.NODE_ENV !== "production")
   require('dotenv').config();
 
+
 // importing routes
 const fetchCountry = require('./routes/fetchCountry');
 
@@ -21,7 +22,7 @@ const fetchCountry = require('./routes/fetchCountry');
 const app = express();
 
 
-// setting up middleware
+// configuring middlewares
 app.use(logger('dev'));
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: false }));
@@ -44,7 +45,7 @@ mongoose.connect(DBUrl,
   })
   .catch((err, next) => {
     console.log('Database connection failed !');
-    console.log(err);
+    console.assert(err);
     next(createError(500))
   })
 
@@ -56,7 +57,7 @@ const limit = rateLimit({
   message: "Too many requests. Wait for 15 minutes.",
 });
 
-// routes
+// routes with rate limit
 app.use('/bifrost/v1.0/', fetchCountry, limit);
 
 // catch 404 and forward to error handler
