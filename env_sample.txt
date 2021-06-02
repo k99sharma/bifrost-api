@@ -1,0 +1,6 @@
+NODE_ENV = 
+DB_URI = 
+
+# Note
+
+.env file should be placed in project root directory as well as in seeds directory
