@@ -11,10 +11,16 @@
 </p>
 
 <p align='center'>
-    🏹 Get information about countries in the world via Bifrost
+    🏹 Get information about countries in the world via Bifrost.
 </p>
 
 ![123535532-0d8ba100-d742-11eb-8a67-d898322a6181](https://user-images.githubusercontent.com/54969439/194126641-0460f882-b180-4950-a0a5-447f96fa3e02.png)
+
+## Tech Stack & Open-source libraries
+
+- [NodeJs](https://nodejs.org/en/) and [ExpressJs](https://expressjs.com/) is used to create a REST API.
+- [MongoDB](https://www.mongodb.com/) is used as database to store information about the countries.
+- [Postman](https://www.postman.com/) is used for API testing.
 
 ## API Endpoints
 Available endpoints that can be used for searching countries
