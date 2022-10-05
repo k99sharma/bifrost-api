@@ -1,15 +1,14 @@
 <h1 align='center'>Bifrost API</h1>
 
-<p align="center">
-    <a href="https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/github/license/k99sharma/earth-model" alt="License" />
-    </a>
+<p align='center'>
+  <a href="https://opensource.org/licenses/MIT">
+  <img alt="License" src="https://img.shields.io/github/license/k99sharma/earth-model"/>
+  </a>
     
-    <a>
-        <img alt="tag" src="https://img.shields.io/github/v/tag/k99sharma/bifrost-api" />
-    </a>
+  <a>
+    <img alt="tag" src="https://img.shields.io/github/v/tag/k99sharma/bifrost-api" />
+  </a>
 </p>
-
 
 <p align='center'>
     🏹 Get information about countries in the world via Bifrost
