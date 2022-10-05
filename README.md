@@ -1,10 +1,26 @@
-# Bifrost RESTful API
-Get information about countries in the world via Bifrost
+<h1 align='center'>Bifrost API</h1>
 
-# API Endpoints
+<p align="center">
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/github/license/k99sharma/earth-model" alt="License" />
+    </a>
+    
+    <a>
+        <img alt="tag" src="https://img.shields.io/github/v/tag/k99sharma/bifrost-api" />
+    </a>
+</p>
+
+
+<p align='center'>
+    🏹 Get information about countries in the world via Bifrost
+</p>
+
+![123535532-0d8ba100-d742-11eb-8a67-d898322a6181](https://user-images.githubusercontent.com/54969439/194126641-0460f882-b180-4950-a0a5-447f96fa3e02.png)
+
+## API Endpoints
 Available endpoints that can be used for searching countries
 
-## Name
+### Name
 Search country by name
 ``` javascript
 https://ghost-32-bifrost.herokuapp.com/bifrost/v1.0/country?name={name}
@@ -16,7 +32,7 @@ https://ghost-32-bifrost.herokuapp.com/bifrost/v1.0/country?name=brazil
 Acceptable names are listed in `codeList` file in `countryCodeList` folder
 
 
-# Response Format
+### Response Format
 ``` html
 https://ghost-32-bifrost.herokuapp.com/bifrost/v1.0/country?name=canada
 ```
@@ -72,6 +88,27 @@ https://ghost-32-bifrost.herokuapp.com/bifrost/v1.0/country?name=canada
 }
 ```
 
-# Source
+## Source
+- Data is collected from [RESTcountries](https://restcountries.eu/#api-endpoints-code) API
 
-- Data is collected from [RESTcountries](https://restcountries.eu/#api-endpoints-code) API 
+## Find this repository userful? :heart:
+Star the repository. 🌟
+<br>Also, __[Follow me](https://github.com/k99sharma)__ on GitHub for my next creations! 😎
+
+# LICENSE
+```xml
+Designed and developed by 2021 (Kalash Sharma)
+
+Licensed under the MIT License, (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   https://opensource.org/licenses/MIT
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
