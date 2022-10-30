@@ -13,7 +13,7 @@ exports.getCountryData = async (req, res) => {
         code : countryCode
     });
 
-    console.log(country)
+    console.log(country + " " + countryCode)
     if(!country){
         return res.status(404).send({ error : "Data not found"});
     }
